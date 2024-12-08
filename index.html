@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="style.css">
     <title>Personal Website</title>
+    <script src="https://kit.fontawesome.com/6fcd0eade4.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -23,13 +24,153 @@
             </nav>
 
             <div class="header-text">
-                <p>Computer Science Student, Graphic Designer and Video Editor</p>
-                <h1>Hi, I'm <span>Ndumiso Maphanga</span>  from the Republic of South Africa </h1>
+                <p>Computer Science Student, Graphic Designer<br> and Video Editor</p>
+                <h1>Hi, I'm <span>Ndumiso Maphanga</span><br>from the Republic of South Africa </h1>
 
             </div>
         </div>
 
     </div>
+    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                        <img src="me.webp">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hi, I’m Ndumiso! I’m a Computer Science student at the University of the Witwatersrand, 
+                        combining my technical expertise with creative passions as a graphic designer and video editor. 
+                        With experience in programming languages like JavaScript, Python, C++, and Java, I enjoy crafting 
+                        responsive websites and innovative digital solutions. Beyond coding, I thrive on creative 
+                        expression through graphic design and video editing, while also engaging in philosophy, basketball, football, 
+                        and meaningful interactions with diverse people. Whether I’m solving problems, exploring ideas, 
+                        or creating visual stories, I’m always driven by curiosity and a desire to make an impact</p>
+                        
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick = "opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick= "opentab('education')">Education</p>
+
+                        </div>
+
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Graphic Designer</span><br> Social Media posts, Website layouts, Banners, Advertisements and commercials</li>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                <li><span>Video Editing</span><br>Social Media videos, Assembling raw footable into a coherent visual narrative through rigirous manipulation and the addition of relevent elements</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Graphic Designer</span><br> Social Media posts, Website layouts, Banners, Advertisements and commercials</li>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                <li><span>Video Editing</span><br>Social Media videos, Assembling raw footable into a coherent visual narrative through rigirous manipulation and the addition of relevent elements</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id = "education">
+                            <ul>
+                                <li><span>Graphic Designer</span><br> Social Media posts, Website layouts, Banners, Advertisements and commercials</li>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                <li><span>Video Editing</span><br>Social Media videos, Assembling raw footable into a coherent visual narrative through rigirous manipulation and the addition of relevent elements</li>
+                            </ul>
+                        </div>
+                          
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-------------Services------------------------>
+
+<div id="services">
+    <div class="container">
+        <h1 class = "sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>huhouhouhouhouhouhouhouho</p>
+                <a href="#"> Learn more </a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-pen-nib"></i>
+                <h2>Graphic Designing</h2>
+                <p>huhouhouhouhouhouhouhouho</p>
+                <a href="#"> Learn more </a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-video"></i>
+                <h2>Video Editing</h2>
+                <p>huhouhouhouhouhouhouhouho</p>
+                <a href="#"> Learn more </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-----------------Portfolio---------------->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class = "sub-title">My Work</h1>
+        <div class=" work-list">
+            <div class="work">
+                <img src="me.webp">
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>You can download it from the app store</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="me.webp">
+                <div class="layer">
+                    <h3>Graphic Design App</h3>
+                    <p>You can download it from the app store</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <!--<img src="me.webp">-->
+                <video src="3387806807-preview.mp4" muted autoplay loop playsinline></video>
+                <div class="layer">
+                    <h3>Sample Edited Video</h3>
+                    <p>You can download it from the app store</p>
+                    <a href="#" class="play-video"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+    </div>
+
+    <a href="#" class="btn">See more</a>
+
+</div>
+</div>
+
+
+<!-----------------------------contact--------------------------->
+
+
+
+
+
+
+    <script src="./script.js"></script>
     
 </body>
 </html>
