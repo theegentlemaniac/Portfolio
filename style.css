@@ -5,10 +5,16 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: #080808;
     color: #fff;
+    
 }
+
 
 #header{
     width: 100%;
@@ -23,22 +29,32 @@ body{
     padding:  10px 10%;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start; /* Changed to align items to the start */
     flex-wrap: wrap;
+    position: absolute;
+    height: 11%;
+    top: 0;
+    left: 0; /* Changed from right to left for proper alignment */
+    width: 100%;
+    background: #080808;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
 }
 
-
-.logo{
+.logo {
     width: 140px;
+    margin-right: 40%; /* This will push the logo to the left and the rest of the content to the right */
+    margin-left: 5%;
 }
 
 nav ul li{
     display: inline-block;
     list-style: none;
-    margin: 10px 20px;
+    margin: 0px 15px;
 }
 
 nav ul li a{
@@ -107,7 +123,7 @@ nav ul li a:hover::after{
 
 .sub-title{
     font-size: 60px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #fff;
 }
 
@@ -309,6 +325,7 @@ nav ul li a:hover::after{
     text-decoration: none;
     color: #fff;
     transition: 0.5s;
+    margin-top: 150px;
 }
 
 .btn:hover{
@@ -328,13 +345,14 @@ nav ul li a:hover::after{
 }
 
 .contact-left p{
-   margin-top: 30%;
+   margin-top: 11%;
+
 }
 
 .contact-left p i {
     color: #ff004f;
     margin-right: 15px;
-    font: size 25px ;
+    font-size: 25px ;
 
 }
 
@@ -382,7 +400,7 @@ form input, form textarea{
 form .btn2{
     padding: 14px 60px;
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 150px;
     cursor: pointer;
 
 }
@@ -390,7 +408,7 @@ form .btn2{
 .copyright{
     width: 100%;
     text-align: center;
-    padding 25px 0;
+    padding: 25px 0;
     background: #262626;
     font-weight: 300 ;
     margin-top: 20px;
@@ -400,4 +418,81 @@ form .btn2{
     color: #ff004f;
 }
 
+    #Languages {
+        padding: 50px 0;
+        text-align: center;
+        color: #fff;
+    }
+    
 
+
+    .slider {
+        margin: 0 auto; /* Center horizontally */
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Optional: center vertically if there's space */
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: rotate 30s linear infinite;
+    }
+
+
+    
+    
+    @keyframes rotate {
+        0% {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+    
+        100% {
+            transform: perspective(1000px) rotateY(360deg);
+        }
+    }
+    
+    .slider span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+    }
+    
+    
+    .slider span img {
+        margin-top: 70px;
+        margin-bottom: 150px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: 2s;
+    }
+    
+    .slider span:hover img {
+        transform: translateY(-50px) scale(1.2);
+    }
+
+    .lang-container {
+        text-align: center; /* Ensures text and inline-block children are centered */
+        display: flex;
+        justify-content: center; /* Center contents horizontally */
+        align-items: center; /* Optional: center vertically */
+        flex-direction: column; /* Ensures vertical stacking */
+        width: 100%; /* Full width of the screen */
+        max-width: 1200px; /* Optional: Add a max width */
+        margin: 0 auto; /* Center the container itself */
+  
+    }
+    
+
+
+
+    
