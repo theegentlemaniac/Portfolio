@@ -491,7 +491,19 @@ form .btn2{
         margin: 0 auto; /* Center the container itself */
   
     }
-    
+
+ .lang-sub-title{
+            font-size: 30px;
+            font-weight: 600;
+            color: #fff;
+            font-style: italic;
+            transition: 2s;
+    }
+
+    .lang-sub-title:hover{
+        color: #ff004f;
+        transform: translateY(-50px) scale(1.0);
+    }
 
 
 
