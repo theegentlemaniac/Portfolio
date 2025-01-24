@@ -465,7 +465,7 @@ form .btn2{
     
     .slider span img {
         margin-top: 70px;
-        margin-bottom: 150px;
+        margin-bottom: 190px;
         position: absolute;
         top: 0;
         left: 0;
@@ -492,18 +492,25 @@ form .btn2{
   
     }
 
- .lang-sub-title{
+    .lang-sub-title{
             font-size: 30px;
             font-weight: 600;
             color: #fff;
             font-style: italic;
             transition: 2s;
+            margin-top: 20px;
+            margin-bottom: 50px;
     }
 
     .lang-sub-title:hover{
         color: #ff004f;
-        transform: translateY(-50px) scale(1.0);
+        transform: scale(1.0);
     }
+
+
+
+
+    
 
 
 
