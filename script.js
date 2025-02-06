@@ -27,3 +27,39 @@ var tablinks = document.getElementsByClassName("tab-links");
             });
         });
         
+        document.addEventListener('DOMContentLoaded', () => {
+            const menu = document.querySelector('nav ul');
+            const barsIcon = document.querySelector('.fa-bars');
+            const xIcon = document.querySelector('.fa-x');
+        
+            if (!menu || !barsIcon || !xIcon) return;
+        
+            barsIcon.addEventListener('click', () => {
+                menu.classList.add('active');
+                barsIcon.classList.add('hidden');
+                xIcon.classList.remove('hidden');
+            });
+        
+            xIcon.addEventListener('click', () => {
+                menu.classList.remove('active');
+                barsIcon.classList.remove('hidden');
+                xIcon.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const preloader = document.querySelector(".preloader");
+            const content = document.querySelector(".content");
+        
+            setTimeout(() => {
+                preloader.classList.add("hidden"); // Hide preloader
+                content.style.display = "block"; // Show content
+            }, 3000); // Adjust time if needed (3 seconds)
+        });
+        
+        
+        
+
+
+        
+        
