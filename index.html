@@ -9,33 +9,32 @@
     <script src="https://kit.fontawesome.com/6fcd0eade4.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="preloader">
+        <div class="ring"></div>
+        <span>Loading...</span>
+     </div>
 
-    <div id="header">
-        <div class="container">
-            <nav>
-            <img src="NdumisoBG.png" class = "logo"> 
+<!-- Your existing header -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img id="homepage-image" src="NdumisoBG.png" class="logo" onload="hideLoader()"> 
             <ul>
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
-               <!--<i class="fa-solid fa-x" onclick="closemenu()"></i>-->
-
             </ul>    
-            
-           <!-- <i class="fa-solid fa-bars" onclick="openmenu()"></i>-->
+        </nav>
 
-            </nav>
-
-            <div class="header-text">
-                <p>Computer Science Student, Graphic Designer<br> and Video Editor</p>
-                <h1>Hi, I'm <span>Ndumiso Maphanga</span><br>from South Africa </h1>
-
-            </div>
+        <div class="header-text">
+            <p>Computer Science Student, Graphic Designer<br> and Video Editor</p>
+            <h1>Hi, I'm <span>Ndumiso Maphanga</span><br>from South Africa </h1>
         </div>
-
     </div>
+</div>
+
     
     <div id="about">
         <div class="container">
