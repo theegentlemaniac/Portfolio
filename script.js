@@ -47,13 +47,19 @@ var tablinks = document.getElementsByClassName("tab-links");
             });
         });
 
+
         document.addEventListener("DOMContentLoaded", function () {
             const preloader = document.querySelector(".preloader");
-            const content = document.querySelector(".content");
+            const homepageImage = document.getElementById("homepage-image");
         
             setTimeout(() => {
                 preloader.classList.add("hidden"); // Hide preloader
-                content.style.display = "block"; // Show content
+                document.body.classList.remove("hidden"); // Allow scrolling
+                document.querySelector(".content").style.display = "block"; // Show content
+        
+                // Add the class to animate the image
+                homepageImage.classList.add("image-visible");
+        
             }, 3000); // Adjust time if needed (3 seconds)
         });
         
