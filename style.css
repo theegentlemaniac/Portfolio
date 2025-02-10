@@ -614,83 +614,98 @@ form .btn2{
         }
     }
       
-      /* Preloader */
-      .preloader {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        transition: opacity 0.5s ease, visibility 0.5s;
-      }
-      
-      /* Ring Animation */
-      .ring {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        animation: ring 2s linear infinite;
-      }
-      
-      @keyframes ring {
-        0% { transform: rotate(0deg); box-shadow: 1px 5px 2px #e65c00; }
-        50% { transform: rotate(180deg); box-shadow: 1px 5px 2px #18b201; }
-        100% { transform: rotate(360deg); box-shadow: 1px 5px 2px #0456c8; }
-      }
-      
-      .ring:before {
-        position: absolute;
-        content: '';
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        box-shadow: 0 0 5px rgba(255,255,255,.3);
-      }
-      
-      /* Loading Text */
-      .preloader span {
-        color: #737373;
-        font-size: 20px;
-        text-transform: uppercase;
-        margin-top: 20px;
-        animation: text 3s ease-in-out infinite;
-      }
-      
-      @keyframes text {
-        50% { color: white; }
-      }
-      
-      /* Hide Preloader */
-      .preloader.hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-      
-      /* Main Content (Initially Hidden) */
-      .content {
-        display: none;
-        text-align: center;
-        color: white;
-        padding: 20px;
-        animation: fadeIn 1s ease-in-out;
-      }
-      
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      
-    
+    /* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease, visibility 0.5s;
+    z-index: 9999; /* Ensure preloader is above everything */
+}
 
+/* Ring Animation - Bigger & Thicker */
+.ring {
+    width: 150px; /* Increased size */
+    height: 150px; /* Increased size */
+    border-radius: 50%;
+    border: 8px solid transparent; /* Make it thicker */
+    animation: ring 2s linear infinite;
+    position: relative;
+}
 
-    
+@keyframes ring {
+    0% { transform: rotate(0deg); box-shadow: 2px 8px 4px #e65c00; }
+    50% { transform: rotate(180deg); box-shadow: 2px 8px 4px #18b201; }
+    100% { transform: rotate(360deg); box-shadow: 2px 8px 4px #0456c8; }
+}
 
+/* Inner glow effect */
+.ring:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
 
+/* Loading Text */
+.preloader span {
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    animation: text 3s ease-in-out infinite;
+}
 
-    
+@keyframes text {
+    50% { color: #f2f2f2; }
+}
+
+/* Hide Preloader */
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Hide scrolling before content loads */
+body.hidden {
+    overflow: hidden;
+}
+
+/* Main Content (Initially Hidden) */
+.content {
+    display: none;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Initially position the image off-screen */
+#homepage-image {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Apply the animation when the preloader disappears */
+.image-visible {
+    transform: translateX(0);
+    opacity: 1;
+}
