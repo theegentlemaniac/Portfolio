@@ -59,13 +59,24 @@ var tablinks = document.getElementsByClassName("tab-links");
         
                 // Add the class to animate the image
                 homepageImage.classList.add("image-visible");
-        
-            }, 3000); // Adjust time if needed (3 seconds)
+            }, 4000); // Adjust time if needed (3 seconds)
         });
-        
-        
-        
+
+        // Burger Menu Toggle for Smaller Devices
+        document.addEventListener("DOMContentLoaded", () => {
+            const burgerMenu = document.querySelector(".burger-menu");
+            const nav = document.querySelector("nav");
+
+            if (burgerMenu && nav) {
+                burgerMenu.addEventListener("click", () => {
+                    nav.classList.toggle("active"); // Toggle the active class on the nav
+                });
+            }
+        });
 
 
-        
-        
+
+
+
+
+
