@@ -49,6 +49,11 @@ nav {
     width: 140px;
     margin-right: 40%; /* This will push the logo to the left and the rest of the content to the right */
     margin-left: 5%;
+    transition: transform 0.3s ease-in-out; /* Add smooth scaling transition */
+}
+
+.logo:hover {
+    transform: scale(1.3); /* Scale forward on hover */
 }
 
 nav ul li{
@@ -60,7 +65,7 @@ nav ul li{
 nav ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
     position: relative;
 }
 
@@ -614,7 +619,7 @@ form .btn2{
         }
     }
 
-    /* Preloader */
+/* Preloader */
 .preloader {
     position: fixed;
     top: 0;
@@ -637,7 +642,7 @@ form .btn2{
     border-radius: 50%;
     border: 8px solid transparent; /* Make it thicker */
     animation: ring 2s linear infinite;
-    position: relative;
+    position: relative; /* Required for absolute positioning of the image */
 }
 
 @keyframes ring {
@@ -646,16 +651,27 @@ form .btn2{
     100% { transform: rotate(360deg); box-shadow: 2px 8px 4px #0456c8; }
 }
 
-/* Inner glow effect */
-.ring:before {
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+/* Image Styling */
+#homepage-image {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    position: absolute; /* Position the image absolutely within the ring */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to truly center the image */
+    animation: scaleInOut 2s infinite alternate ease-in-out;
+}
+
+/* Scale animation */
+@keyframes scaleInOut {
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.7;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
 }
 
 /* Loading Text */
@@ -706,15 +722,88 @@ body.hidden {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Initially position the image off-screen */
 #homepage-image {
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 1s ease-out, opacity 1s ease-out;
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    position: absolute; /* Position the image absolutely within the ring */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) translateX(100%); /* Center and move off-screen */
+    opacity: 0; /* Start invisible */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition */
+    animation: scaleInOut 2s infinite alternate ease-in-out; /* Scale animation */
 }
 
 /* Apply the animation when the preloader disappears */
 .image-visible {
-    transform: translateX(0);
-    opacity: 1;
+    transform: translate(-50%, -50%) translateX(0); /* Center and bring on-screen */
+    opacity: 1; /* Make visible */
+}
+
+/* Burger Menu Styles (Hidden by Default) */
+.burger-menu {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.burger-menu div {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show navigation menu when active */
+nav.active ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #080808;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex; /* Default display for larger screens */
+}
+
+/* Responsive Styles for Smaller Devices */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex; /* Show burger menu on smaller screens */
+    }
+
+    nav ul {
+        display: none; /* Hide menu by default on smaller screens */
+    }
+
+    nav.active ul {
+        display: flex; /* Show menu when active */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add spacing between menu items */
+        text-align: center; /* Center align menu items */
+    }
+}
+
+/* Education Section */
+#education ul {
+    list-style-type: disc; /* Add bullets to all lists */
+    margin-left: 20px; /* Add indentation for bullets */
+}
+
+#education p {
+    text-decoration: underline; /* Underline the paragraphs */
 }
