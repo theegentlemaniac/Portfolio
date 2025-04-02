@@ -625,75 +625,54 @@ form .btn2{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: black;
+    height: 100%;
+    background: #222; /* Dark background */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    transition: opacity 0.5s ease, visibility 0.5s;
-    z-index: 9999; /* Ensure preloader is above everything */
+    z-index: 1000;
+    overflow: hidden; /* Prevent scrolling during preloader */
 }
 
-/* Ring Animation - Bigger & Thicker */
 .ring {
+    width: 200px; /* Increased size */
+    height: 200px; /* Increased size */
+    border: 10px solid transparent; /* Increased thickness */
+    border-top: 10px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    animation: rotateRing 2s linear infinite;
+}
+
+svg {
     width: 150px; /* Increased size */
     height: 150px; /* Increased size */
-    border-radius: 50%;
-    border: 8px solid transparent; /* Make it thicker */
-    animation: ring 2s linear infinite;
-    position: relative; /* Required for absolute positioning of the image */
+    position: absolute;
 }
 
-@keyframes ring {
-    0% { transform: rotate(0deg); box-shadow: 2px 8px 4px #e65c00; }
-    50% { transform: rotate(180deg); box-shadow: 2px 8px 4px #18b201; }
-    100% { transform: rotate(360deg); box-shadow: 2px 8px 4px #0456c8; }
+path {
+    fill: none;
+    stroke: white;
+    stroke-width: 5; /* Increased stroke width */
+    stroke-dasharray: 400; /* Adjusted for larger size */
+    stroke-dashoffset: 400; /* Adjusted for larger size */
+    animation: drawN 1.5s linear forwards;
+    filter: drop-shadow(0px 0px 10px #fff); /* Add glow effect */
 }
 
-/* Image Styling */
-#homepage-image {
-    width: 80px; /* Adjust size as needed */
-    height: 80px; /* Adjust size as needed */
-    position: absolute; /* Position the image absolutely within the ring */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Offset to truly center the image */
-    animation: scaleInOut 2s infinite alternate ease-in-out;
-}
-
-/* Scale animation */
-@keyframes scaleInOut {
+@keyframes rotateRing {
     from {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 0.7;
+        transform: rotate(0deg);
     }
     to {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: 1;
+        transform: rotate(360deg);
     }
 }
 
-/* Loading Text */
-.preloader span {
-    color: white;
-    font-size: 22px;
-    text-transform: uppercase;
-    margin-top: 20px;
-    position: relative; /* Required for pseudo-element positioning */
-}
-
-/* Ellipses Animation */
-.preloader span::after {
-    content: '.'; /* Initial content */
-    animation: ellipses 1.5s steps(4, end) infinite;
-}
-
-@keyframes ellipses {
-    0% { content: '.'; }
-    33% { content: '..'; }
-    66% { content: '...'; }
-    100% { content: '.'; }
+@keyframes drawN {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 /* Hide Preloader */
@@ -701,9 +680,10 @@ form .btn2{
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* Hide scrolling before content loads */
+/* Disable scrolling during preloader */
 body.hidden {
     overflow: hidden;
 }
