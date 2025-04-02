@@ -50,16 +50,32 @@ var tablinks = document.getElementsByClassName("tab-links");
 
         document.addEventListener("DOMContentLoaded", function () {
             const preloader = document.querySelector(".preloader");
-            const homepageImage = document.getElementById("homepage-image");
-        
+            const audioElement = document.getElementById("preloader-audio");
+
+            // Disable scrolling during preloader
+            document.body.classList.add("hidden");
+
+            // Check if audio is allowed to play
+            if (audioElement) {
+                const playAudio = () => {
+                    audioElement.play().catch(err => console.warn("Autoplay blocked:", err));
+                    document.removeEventListener("click", playAudio); // Remove listener after first click
+                };
+
+                // If autoplay is blocked, wait for user interaction
+                document.addEventListener("click", playAudio);
+
+                // Attempt to play immediately
+                playAudio();
+            }
+
             setTimeout(() => {
                 preloader.classList.add("hidden"); // Hide preloader
-                document.body.classList.remove("hidden"); // Allow scrolling
-                document.querySelector(".content").style.display = "block"; // Show content
-        
-                // Add the class to animate the image
-                homepageImage.classList.add("image-visible");
-            }, 4000); // Adjust time if needed (3 seconds)
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Remove preloader from DOM
+                    document.body.classList.remove("hidden"); // Re-enable scrolling
+                }, 500); // Match fade-out duration
+            }, 2000); // Preloader display duration
         });
 
         // Burger Menu Toggle for Smaller Devices
