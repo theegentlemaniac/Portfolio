@@ -11,22 +11,19 @@
 <body>
 
     <div class="preloader">
-        <div class="ring">
-
-        <img id="homepage-image" src="./logos/NLogo.png" alt="Loading Image">
-
-        </div>
-
-        <span>Loading</span>
-        
-     </div>
+        <div class="ring"></div>
+        <svg viewBox="0 0 100 100">
+            <path d="M 30 70 L 30 30 L 70 70 L 70 30" />
+        </svg>
+        <audio id="preloader-audio" src="audio/preloader-sound.mp3"></audio>
+    </div>
 
 <!-- Your existing header -->
 <div id="header">
     <div class="container">
         <nav>
             <img src="NdumisoBG.png" class="logo" onload="hideLoader()"> 
-            <div class="burger-menu">
+<div class="burger-menu">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -73,6 +70,7 @@
                         </div>
 
                         <div class="tab-contents active-tab" id="skills">
+          
                             <ul>
                                 <li><span>Graphic Designer</span><br> Social Media posts, Website layouts, Banners, Advertisements and commercials</li>
                                 <li><span>Web Development</span><br>Developing functional and responsive web applications, focusing on both front-end solutions</li>
@@ -112,6 +110,12 @@
                                         <li>Version control and collaborative development using Git and GitHub.</li>
                                     </ul>
                                 </li>
+                                <!---
+                                <li>
+                                    <span><strong>Video Editing</strong></span><br>
+                                    Social media videos: Assembling raw footage into a coherent visual narrative through rigorous manipulation and the addition of relevant elements.
+                                </li>
+                                -->
                             </ul>
                         </div>
                         
