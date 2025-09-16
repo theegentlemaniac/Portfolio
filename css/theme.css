@@ -1,0 +1,13 @@
+/* Theme base */
+:root { --accent:#ff004f; --bg:#080808; --bg-alt:#262626; --text:#ffffff; --muted:#ababab; }
+body.light { --bg:#f5f7fa; --bg-alt:#ffffff; --text:#1e1f22; --muted:#4d5156; --accent:#d40045; }
+body { background:var(--bg); color:var(--text); transition:background .4s,color .4s; }
+
+/* Hero heading color adaptation */
+#header { background-size:cover; background-position:center; position:relative; }
+body.light #header { filter:brightness(0.95); }
+.header-text h1 span { color:var(--accent); }
+
+/* Typewriter fallback style */
+#typewriter-name.typing-active::after { content:'|'; animation:blink 1s steps(1) infinite; color:var(--accent); margin-left:3px; }
+@keyframes blink { 50% { opacity:0; } }

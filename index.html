@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="style.css">
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/cards.css">
     <link rel="shorcut icon" type="my-icon" href="me.webp">
     <title>Personal Website</title>
-    <script src="https://kit.fontawesome.com/6fcd0eade4.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6fcd0eade4.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0" defer></script>
+    <script src="js/typewriter.js" defer></script>
 </head>
 <body>
 
@@ -20,26 +26,33 @@
 
 <!-- Your existing header -->
 <div id="header">
-    <div class="container">
-        <nav>
-            <img src="NdumisoBG.png" class="logo" onload="hideLoader()"> 
-<div class="burger-menu">
-                <div></div>
-                <div></div>
-                <div></div>
+    <nav class="nav" role="navigation" aria-label="Main Navigation">
+        <div class="nav-container">
+            <img src="NdumisoBG.png" class="logo" alt="Logo" fetchpriority="high" width="120" height="60">
+            <div class="nav-anim-shell nav-links">
+                <a class="btn" href="#header">Home</a>
+                <a class="btn" href="#about">About</a>
+                <a class="btn" href="#services">Services</a>
+                <a class="btn" href="#portfolio">Portfolio</a>
+                <a class="btn" href="#contact">Contact</a>
+                <svg class="outline" overflow="visible" width="400" height="60" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <rect class="rect" pathLength="100" x="0" y="0" width="400" height="60" fill="transparent" stroke-width="5"></rect>
+                </svg>
             </div>
-            <ul>
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>    
-        </nav>
-
+            <div class="theme-toggle" title="Toggle light / dark mode">
+                <label class="round">
+                    <input name="onoff" id="onoff" type="checkbox" aria-label="Theme toggle">
+                    <div class="back">
+                        <div class="but"><span class="on">0</span><span class="off">I</span></div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <div class="container hero-container" aria-labelledby="intro-heading">
         <div class="header-text">
             <p>Computer Science Student, Graphic Designer<br> and Video Editor</p>
-            <h1>Hi, I'm <span>Ndumiso Maphanga</span><br>from South Africa </h1>
+            <h1 id="intro-heading">Hi, I'm <span id="typewriter-name" data-full-text="Ndumiso Maphanga" class="typed-fallback">Ndumiso Maphanga</span><br>from South Africa </h1>
         </div>
     </div>
 </div>
@@ -49,7 +62,7 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                        <img src="me.webp">
+                        <img src="me.webp" alt="Photo of Ndumiso" loading="lazy" decoding="async">
                 </div>
 
                 <div class="about-col-2">
@@ -174,7 +187,7 @@
         <div class="work-list">
             <!-- Weather App -->
             <div class="work">
-                                <img src="weatherapp.jpg">
+                                <img src="weatherapp.jpg" alt="Weather App Screenshot" loading="lazy" decoding="async">
                                 <div class="layer">
                                     <h3>Live Weather Update Web App</h3>
                                     <p>Check the live weather updates!</p>
@@ -183,7 +196,7 @@
                                 </div>
                             </div>
                             <div class="work">
-                                <img src="GD.jpg">
+                                <img src="GD.jpg" alt="Graphic Design Portfolio Cover" loading="lazy" decoding="async">
                                 <div class="layer">
                                     <h3>Graphic Design Portfolio</h3>
                                     <p>Explore my creative designs!</p>
@@ -193,7 +206,7 @@
                             </div>
 
                             <div class="work">
-                                <img src="Translate.jpg">
+                                <img src="Translate.jpg" alt="Translator App Screenshot" loading="lazy" decoding="async">
                                 <div class="layer">
                                     <h3>Translator Web App</h3>
                                     <p>Explore my language translation web app! </p>
@@ -202,7 +215,7 @@
                             </div>
 
                             <div class="work">
-                                <img src="Piano cover.jpg">
+                                <img src="Piano cover.jpg" alt="Piano App Screenshot" loading="lazy" decoding="async">
                                 <div class="layer">
                                     <h3>Piano Web App</h3>
                                     <p>Check out my web version of a piano made by a pianist! </p>
@@ -304,14 +317,14 @@
     
             <div class="slider">
 
-                    <span style="--i:1;"><img src="./logos/java.png"></span>
-                    <span style="--i:2;"><img src="./logos/cplusplus-logo.png"></span>
-                    <span style="--i:3;"><img src="./logos/Python-logo.png"></span>
-                    <span style="--i:4;"><img src="./logos/C-logo.png"></span>
-                    <span style="--i:5;"><img src="./logos/javascript-logo-0.png"></span>
-                    <span style="--i:6;"><img src="./logos/html5-logo.png"></span>
-                    <span style="--i:7;"><img src="./logos/css-small-logo.png"></span>
-                    <span style="--i:8;"><img src="./logos/tw-logo.png"></span>
+                    <span style="--i:1;"><img src="./logos/java.png" alt="Java" loading="lazy" decoding="async"></span>
+                    <span style="--i:2;"><img src="./logos/cplusplus-logo.png" alt="C++" loading="lazy" decoding="async"></span>
+                    <span style="--i:3;"><img src="./logos/Python-logo.png" alt="Python" loading="lazy" decoding="async"></span>
+                    <span style="--i:4;"><img src="./logos/C-logo.png" alt="C" loading="lazy" decoding="async"></span>
+                    <span style="--i:5;"><img src="./logos/javascript-logo-0.png" alt="JavaScript" loading="lazy" decoding="async"></span>
+                    <span style="--i:6;"><img src="./logos/html5-logo.png" alt="HTML5" loading="lazy" decoding="async"></span>
+                    <span style="--i:7;"><img src="./logos/css-small-logo.png" alt="CSS" loading="lazy" decoding="async"></span>
+                    <span style="--i:8;"><img src="./logos/tw-logo.png" alt="Tailwind" loading="lazy" decoding="async"></span>
                     <!--<span style ="--i:9;"><img src = "./logos/React.png"></span>-->
 
             </div>
@@ -319,7 +332,25 @@
         </div>
     </div>
 
-    <a href="#" class="btn">See more</a>
+    <a href="#" class="btn see-more-btn">See more</a>
+
+    <!-- Cards Section -->
+    <section id="cards" class="cards-section" aria-label="Showcase Cards">
+        <div class="cards-wrapper">
+        <div class="e-card playing" aria-label="Role card">
+                <div class="image" aria-hidden="true"></div>
+                <div class="wave" aria-hidden="true"></div>
+                <div class="wave" aria-hidden="true"></div>
+                <div class="wave" aria-hidden="true"></div>
+                <div class="infotop">
+            <!-- Icon removed per request -->
+            <br>
+                    UI / UX Designer<br>
+                    <div class="name">MikeAndrewDesigner</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </div>
 </div>
